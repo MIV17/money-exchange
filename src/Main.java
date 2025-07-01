@@ -1,5 +1,3 @@
-import com.sun.jdi.Value;
-
 import java.util.Scanner;
 
 public class Main {
@@ -18,15 +16,14 @@ public class Main {
 
         System.out.print("Введите сумму валюты: ");
         int valueSum = scanner.nextInt();
-        //System.out.println();
         System.out.println("Выберите валюту: ");
         System.out.println("1. USD");
         System.out.println("2. EUR");
         int choiceType = scanner.nextByte();
         String result = convertCurrency(valueSum, choiceType);
         int dotIndex = result.indexOf(".");
-        String finalyResult = result.substring(0, dotIndex + 2);
-        System.out.println("По текущему курсу сумма будет: " + finalyResult);
+        String finalResult = result.substring(0, dotIndex + 2);
+        System.out.println("По текущему курсу сумма будет: " + finalResult);
     }
 
     static String convertCurrency(int valueSum, int choiceType) {
